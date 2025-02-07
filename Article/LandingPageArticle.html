@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="אוטומציה, אוטומציה עיסקית, אוטומקס, מקסימום אוטומציה, CRM,צאט בוט,מאמרים על אוטומציה עיסקית,טיפים לניהול עסק,">
+    <meta name="author" content="חנה מילר">
+    <title>אוטומקס - אוטומציה עסקית</title>
+    <link rel="icon" href="../favicon.svg" type="image/svg">
+    <link rel="shortcut icon" href="favicon.svg" type="image/svg">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="script" href="./script.js">
+    <style>
+        /* עיצוב כללי */
+        body {
+            background-color: #fff;
+            color: #333;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            direction: rtl;
+            align-items: start;
+            font-size: 20px;
+        }
+        
+        /* עיצוב כותרות */
+        h1 {
+            color: #2E8B57; /* ירוק כהה */
+            font-size: 2em;
+            border-bottom: 2px solid #2E8B57;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            color: #FF8C00; /* כתום */
+            font-size: 1.8em;
+            margin-top: 20px;
+        }
+        
+        h3 {
+            color: #DC143C; /* אדום כהה */
+            font-size: 1.4em;
+            margin-top: 15px;
+        }
+        
+        /* עיצוב פסקאות */
+        p {
+            margin: 10px 0;
+        }
+
+        /* עיצוב רשימות */
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        /* עיצוב קישורים */
+        a {
+            color: #2E8B57;
+            text-decoration: underline;
+        }
+
+        /* עיצוב כפתור */
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #FF8C00;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #DC143C;
+        }
+
+        ul li {
+    display: flow;
+    align-items: baseline;
+    margin: 10px 0;
+    color: #d32840;
+}
+
+.article{
+margin: auto;
+max-width: 1000px;
+}
+    </style>
+</head>
+<body dir="rtl">
+    <script>
+        const element = document.getElementById("dynamic-text");
+        const textArray = ["מקסימום אוטומציה", "אוטומציה עסקית"];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typingSpeed = 100;
+
+        function type() {
+            const currentText = textArray[textIndex];
+            if (isDeleting) {
+                // מחיקת האותיות האחרונות בטקסט
+                element.innerHTML = currentText.substring(0, charIndex - 1) + '<span class="caret">|</span>';
+                charIndex--;
+                typingSpeed = 50;
+                if (charIndex === 0) {
+                    isDeleting = false;
+                    textIndex = (textIndex + 1) % textArray.length;
+                }
+            } else {
+                // הוספת אותיות לטקסט
+                element.innerHTML = currentText.substring(0, charIndex + 1) + '<span class="caret">|</span>';
+                charIndex++;
+                typingSpeed = 150;
+                if (charIndex === currentText.length) {
+                    isDeleting = true;
+                    typingSpeed = 1000; // השהייה קצרה לפני מחיקה
+                }
+            }
+            setTimeout(type, typingSpeed);
+        }
+
+        // התחלת האנימציה
+        type();
+
+
+        function toggleMenu() {
+    const menu = document.querySelector('.menu');
+    menu.classList.toggle('show'); // מציג/מסתיר את התפריט
+}
+
+// סגירת התפריט בלחיצה מחוץ לתפריט
+document.addEventListener('click', function(event) {
+    const navbar = document.querySelector('.navbar');
+    
+
+    // בודק שההקלקה היא מחוץ לתפריט
+    if (!navbar.contains(event.target)) {
+        menu.classList.remove('show'); // הסתרת התפריט
+    }
+});;
+    </script>
+
+   
+
+    <div class="header-section"></div>
+    <nav class="navbar" onclick="toggleMenu()">
+        <button class="menu-toggle">☰</button> <!-- כפתור לפתיחה -->
+        <ul class="menu">
+            <li class="close-btn"><a href="javascript:void(0);" onclick="toggleMenu()">✖</a></li> <!-- כפתור סגירה "X" -->
+            <li><a href="../index.html"> <span class="menu-icon">✓</span><span>עלינו</span></a></li>
+            <li><a href="../index.html#services"><span class="menu-icon">✓</span><span>שירותים</span> </a></li>
+            <li><a href="../index.html#contact"><span class="menu-icon">✓</span><span>צור קשר</span> </a></li>
+            <li><a href="./ArticleList.html"><span class="menu-icon">✓</span><span>מאמרים</span> </a></li>
+           </ul>
+    </nav> 
+
+    <div class="article">
+
+    <h1>מדריך לבניית דף נחיתה לעסק שלך</h1>
+
+    <p>דף נחיתה אפקטיבי יכול לשפר את שיעורי ההמרה שלך ולגרום ללקוחות פוטנציאליים לפעול – כמו רכישת מוצר, הרשמה לניוזלטר, או הורדת תוכן ייחודי. המדריך הזה ילווה אותך בבניית דף נחיתה בקלות בעזרת כלים פשוטים לשימוש.</p>
+
+    <h2>שלב 1: בחירת פלטפורמת בניית דפי נחיתה</h2>
+
+    <p>לפני שמתחילים, יש לבחור פלטפורמה מתאימה לבניית דף הנחיתה. הנה כמה כלים מומלצים:</p>
+    <ul>
+        <li><a href="https://www.smoove.io/he/" target="_blank">Smoove</a> - מערכת דיוור בעברית שמציעה גם כלי לבניית דפי נחיתה, יש אפשרות למסלול חינמי.</li>
+        <li><a href="https://www.responder.co.il" target="_blank">רב מסר</a> - מערכת דיוור פופולארית בעברית שמציעה גם כלי לבניית דפי נחיתה.</li>
+   </ul>
+
+    <h2>שלב 2: הגדרת מטרת דף הנחיתה</h2>
+
+    <p>כדי שדף הנחיתה יהיה אפקטיבי, יש להגדיר מטרה ברורה. שאל את עצמך:</p>
+    <ul>
+        <li>האם המטרה היא לאסוף כתובות מייל?</li>
+        <li>האם רוצים להציג מוצר למכירה?</li>
+        <li>האם רוצים לקדם אירוע או שירות מסוים?</li>
+    </ul>
+    <p>הגדרת מטרה ברורה תעזור למקד את העיצוב והתוכן.</p>
+
+    <h2>שלב 3: בנית הדף בSmoove</h2>
+
+    <p>1. בתפריט – לחיצה על “דפי נחיתה”</p>
+    <p>2. "יצירת דף נחיתה" - בפינה הימנית העליונה"</p>
+    <p>3. בחירת תבנית</p>
+    <p>4. גרירת בלוקים לעיצוב הדף</p>
+    <p>5. “הוספת בלוקים” – נמצא בסרגל העיצוב השמאלי, בפינה העליונה</p>
+    <p>6. בחירת הבלוק הרצוי</p>
+    <p>7. גרירת הבלוק לגוף דף הנחיתה במקום הרצוי </p>
+    <p>8. עריכת הבלוק על ידי לחיצה על “עריכה” – כפתור המסומן בעיפרון </p>
+    <p>9. מעבר ללשונית “הודעת תודה”</p>
+    <p>10. הגדרת הדף אליו יופנה ליד לאחר הרשמתו - דף תודה, דף נחיתה אחר, כתובת חיצונית</p>
+    <p>11. מעבר ללשונית "הגדרות"</p>
+    <p>12. הגדרת שם הדף</p>
+    <p>13. שיוך הלידים הנרשמים לרשימת אנשי קשר - בחירת הרשימה אליה הלידים ישוייכו </p>
+    <p>14. שמירה</p>
+
+    <h2>שלב 4: פרסום הדף</h2>
+    <p>1. לחיצה על "פרסום"</p>
+    <p>2. העתקת כתובת דף הנחיתה</p>
+    <p>3. הפצת הכתובת לקהל היעד הרלוונטי </p>
+   
+
+    <h2>שלב 5: בדיקת גרסת דף הנחיתה</h2>
+
+    <p>לפני פרסום דף הנחיתה, בצעו בדיקות לוודא שהכל עובד בצורה חלקה:</p>
+    <ul>
+        <li>בדקו את טופס ההרשמה.</li>
+        <li>ודאו שהכפתורים עובדים ושמובילים לעמוד הנכון.</li>
+        <li>עברו על התוכן לוודא שאין שגיאות כתיב או טעויות.</li>
+    </ul>
+
+    <br/>
+</div>
+</body>
+</html>

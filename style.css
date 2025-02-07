@@ -1,0 +1,416 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: 26px;
+    background-color: #000000;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden auto;
+}
+
+/* עיצוב הקונטיינר הראשי */
+.container {
+    max-width: 800px;
+    padding: 20px;
+    text-align: center;
+}
+
+/* כותרת ראשית */
+h1 {
+    color: #f78e5a;
+    margin-bottom: 20px;
+}
+
+/* תת-כותרת */
+h2 {
+    color: #89e86c;
+    margin-bottom: 30px;
+}
+.header-section{
+    height: 40vh;
+    width: 100vw;
+    background-image: url('./robots.jpg'); /* הוספת תמונה לרקע */
+    background-size: 1200px; /* מתאם את התמונה לגובה ורוחב של הקטע */
+    background-position: top; /* ממקם את התמונה במרכז */
+}
+/* כותרות קטעים */
+.section-title {
+    color: #f6656b;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f78e5a;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* עיצוב טקסט */
+.text-content {
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+/* רשימה בתוך קטע השירותים */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    color: #ffffff;
+}
+
+
+
+/* כפתור קריאה לפעולה */
+.cta-button {
+    display: inline-block;
+    background: linear-gradient(90deg, #89e86c, #f6656b, #f78e5a);
+    color: #ffffff;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin-top: 30px;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #f6656b;
+    transform: scale(1.05);
+}
+
+/* התאמה לנייד */
+@media (max-width: 600px) {
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.2rem; }
+    .section-title { font-size: 1.5rem; }
+}
+
+
+/* עיצוב הכרטיסים */
+.card {
+    width: 300px;
+    height: 200px;
+    border: 2px solid #91e76f;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    background-color: #111111;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.card-content a {
+    position: absolute;
+    bottom: 20px;
+}
+
+
+/* כותרת */
+.card-title {
+    color: #f78e5a;
+    font-size: 1.4rem;
+    transition: opacity 0.3s ease;
+    position: absolute;
+}
+
+/* תיאור המאמר */
+.card-description {
+    color: #cccccc;
+    font-size: 1rem;
+    opacity: 0;
+    position: absolute;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    padding: 0 10px;
+}
+
+/* אנימציה של מעבר עכבר */
+.card:hover {
+    transform: scale(1.05);
+    background: linear-gradient(90deg, #89e86c, #f6656b, #f78e5a);
+    color: #ffffff;
+}
+
+/* כאשר העכבר מעל הכרטיס */
+.card:hover .card-title {
+    opacity: 0;
+}
+
+.card:hover .card-description {
+    opacity: 1;
+}
+/* עיצוב כרטיסים */
+.card-1 {
+    width: 40%;
+    height: 100px;
+    border: 2px solid #91e76f;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px 0;
+    transition: transform 0.3s ease, background 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    justify-content: center; /* מרכז אופקית */
+    align-items: center; /* מרכז אנכית */
+    height: 100px; /* גובה לדוגמה */
+}
+
+/* אנימציה של מעבר עכבר */
+.card-1:hover {
+    transform: scale(1.05);
+    background: linear-gradient(90deg, #89e86c, #f6656b, #f78e5a);
+    color: #ffffff;
+}
+
+/* כפתור קריאה לפעולה */
+.cta-button {
+    display: inline-block;
+    background-color: #89e86c;
+    color: #ffffff;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 30px;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #f6656b;
+    transform: scale(1.05);
+}
+
+
+/*h1 מוסתר , קיים בשביל גוגל*/
+.caption {
+color: #000000; /* צבע הטקסט */
+font-size: 2px; 
+}
+
+/* עיצוב SVG */
+.icon-container {
+width: 64px;
+height: 64px;
+display: inline-block;
+animation: bounce 2s ease-in-out infinite;;
+}
+
+/*SVG הגדרת הנפשה */
+@keyframes bounce {
+0%, 100% { 
+transform: translateY(0); /* מצב התחלתי וסופי - במיקום המקורי */
+}
+50% { 
+transform: translateY(-10px); /* באמצע האנימציה - עולה למעלה */
+}
+}
+
+/* התאמה לנייד */
+@media (max-width: 600px) {
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.2rem; }
+    .section-title { font-size: 1.5rem; }
+}
+
+
+/* מיכל ההקלדה  - הנפשה של כתיבה ומחיקה*/
+  .typewriter-container {
+    display: inline-flex;
+    align-items: center;
+    overflow: hidden;
+    text-align: right;
+    direction: rtl;
+    color: #f3ba24;
+    font-size: 3rem;
+}
+
+
+/* חלק קבוע */
+.static-text {
+    margin-left: 15px;
+}
+
+/* חלק המתחלף */
+.dynamic-text {
+    display: inline-block;
+    width: 360px; /* קבע רוחב לפי הטקסט הארוך ביותר */
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* אפקט הבהוב הסמן */
+@keyframes caret-blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+
+.small{
+    font-size: 11px;
+    color: #000000;
+margin: 0px;
+}
+
+
+/* עיצוב בסיסי לתפריט */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #333;
+    width: 100%;
+}
+
+/* עיצוב הרשימה */
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+/* קישורים */
+.navbar ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: #f78e5a;
+}
+
+/* כפתור פתיחת התפריט במובייל */
+.menu-toggle {
+    
+    display: none;
+}
+
+/* התאמה לנייד: התפריט יוסתר ויוצג בלחיצה */
+@media (max-width: 640px) {
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background-color: #333;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 10px;
+        border-radius: 8px;
+        width: 150px;
+        margin: auto;
+        height: fit-content;
+        z-index: 1000; /* מעלה את התפריט מעל כל האלמנטים האחרים */
+    }
+
+    .menu-toggle {
+        display: inline; /* הצגת כפתור התפריט */
+    }
+
+    .navbar ul.active {
+        display: flex; /* הצגת התפריט בלחיצה */
+    }
+}
+
+.menu a {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* מרווח בין האייקון לטקסט */
+}
+
+.menu-icon {
+    color: #91e76f;
+    font-weight: bold;
+}
+
+  /* התאמה לנייד */
+  @media (max-width: 640px) {
+            h1 { font-size: 1.5rem; }
+            h2 { font-size: 1.2rem; }
+            .section-title { font-size: 1.2rem; }
+            .card-1 {
+                width: 75vw;
+                margin: 25px;
+            }
+            .container {
+                max-width: 80vw;
+               
+    }
+    .typewriter-container{
+        display: block;
+    }
+
+    
+    .menu {
+        position: fixed; /* תפריט קבוע במסך קטן */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        background-color: #000000;
+        z-index: 1000;
+        display: none; /* הסתרת התפריט עד שהוא נפתח */
+    }
+
+    .menu.show {
+        display: flex; /* מציג את התפריט */
+    }
+
+   
+/* כפתור פתיחת התפריט במובייל */
+.menu-toggle {
+    
+    display: inline-block;
+    padding: 10px; /* אזור לחיץ רחב יותר */
+    font-size: 1.5rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+    .close-btn {
+        display: block;
+        text-align: right;
+        padding: 15px;
+        font-size: 1.5rem;
+        color: #ffffff;
+    
+}
+  }
+
+  /* כפתור סגירה "X" */
+.close-btn {
+    display: none; /* מסתיר את הכפתור במסכים גדולים */
+}

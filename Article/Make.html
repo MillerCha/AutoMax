@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="אוטומציה, אוטומציה עיסקית, אוטומקס, מקסימום אוטומציה, CRM,צאט בוט,מאמרים על אוטומציה עיסקית,טיפים לניהול עסק,">
+    <meta name="author" content="חנה מילר">
+    <title>אוטומקס - אוטומציה עסקית</title>
+    <link rel="icon" href="../favicon.svg" type="image/svg">
+    <link rel="shortcut icon" href="favicon.svg" type="image/svg">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="script" href="./script.js">
+    <style>
+        /* עיצוב כללי */
+        body {
+            background-color: #fff;
+            color: #333;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            direction: rtl;
+            align-items: start;
+            font-size: 20px;
+        }
+        
+        /* עיצוב כותרות */
+        h1 {
+            color: #2E8B57; /* ירוק כהה */
+            font-size: 2em;
+            border-bottom: 2px solid #2E8B57;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            color: #FF8C00; /* כתום */
+            font-size: 1.8em;
+            margin-top: 20px;
+        }
+        
+        h3 {
+            color: #DC143C; /* אדום כהה */
+            font-size: 1.4em;
+            margin-top: 15px;
+        }
+        
+        /* עיצוב פסקאות */
+        p {
+            margin: 10px 0;
+        }
+
+        /* עיצוב רשימות */
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        /* עיצוב קישורים */
+        a {
+            color: #2E8B57;
+            text-decoration: underline;
+        }
+
+        /* עיצוב כפתור */
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #FF8C00;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #DC143C;
+        }
+
+        ul li {
+    display: flow;
+    align-items: baseline;
+    margin: 10px 0;
+    color: #d32840;
+}
+
+.article{
+margin: auto;
+max-width: 1000px;
+}
+    </style>
+</head>
+<body dir="rtl">
+    <script>
+        const element = document.getElementById("dynamic-text");
+        const textArray = ["מקסימום אוטומציה", "אוטומציה עסקית"];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typingSpeed = 100;
+
+        function type() {
+            const currentText = textArray[textIndex];
+            if (isDeleting) {
+                // מחיקת האותיות האחרונות בטקסט
+                element.innerHTML = currentText.substring(0, charIndex - 1) + '<span class="caret">|</span>';
+                charIndex--;
+                typingSpeed = 50;
+                if (charIndex === 0) {
+                    isDeleting = false;
+                    textIndex = (textIndex + 1) % textArray.length;
+                }
+            } else {
+                // הוספת אותיות לטקסט
+                element.innerHTML = currentText.substring(0, charIndex + 1) + '<span class="caret">|</span>';
+                charIndex++;
+                typingSpeed = 150;
+                if (charIndex === currentText.length) {
+                    isDeleting = true;
+                    typingSpeed = 1000; // השהייה קצרה לפני מחיקה
+                }
+            }
+            setTimeout(type, typingSpeed);
+        }
+
+        // התחלת האנימציה
+        type();
+
+
+        function toggleMenu() {
+    const menu = document.querySelector('.menu');
+    menu.classList.toggle('show'); // מציג/מסתיר את התפריט
+}
+
+// סגירת התפריט בלחיצה מחוץ לתפריט
+document.addEventListener('click', function(event) {
+    const navbar = document.querySelector('.navbar');
+    
+
+    // בודק שההקלקה היא מחוץ לתפריט
+    if (!navbar.contains(event.target)) {
+        menu.classList.remove('show'); // הסתרת התפריט
+    }
+});;
+    </script>
+
+   
+
+    <div class="header-section"></div>
+    <nav class="navbar" onclick="toggleMenu()">
+        <button class="menu-toggle">☰</button> <!-- כפתור לפתיחה -->
+        <ul class="menu">
+            <li class="close-btn"><a href="javascript:void(0);" onclick="toggleMenu()">✖</a></li> <!-- כפתור סגירה "X" -->
+            <li><a href="../index.html"> <span class="menu-icon">✓</span><span>עלינו</span></a></li>
+            <li><a href="../index.html#services"><span class="menu-icon">✓</span><span>שירותים</span> </a></li>
+            <li><a href="../index.html#contact"><span class="menu-icon">✓</span><span>צור קשר</span> </a></li>
+            <li><a href="./ArticleList.html"><span class="menu-icon">✓</span><span>מאמרים</span> </a></li>
+           </ul>
+    </nav> 
+
+    <div class="article">
+        <h1>קסמים בתקשורת בין תוכנות - MAKE</h1>
+        <p>בעידן שבו לכל עסק יש מערכות ותוכנות שונות שמנהלות חלקים שונים מהפעילות, האתגר הגדול ביותר הוא <strong>לגרום לכולן לעבוד יחד בהרמוניה מושלמת</strong>. הפתרון? קסם אמיתי שנקרא <strong>MAKE</strong> (לשעבר Integromat) – כלי אוטומציה חכם שמחבר בין כלים ומערכות בצורה יעילה ופשוטה.</p>
+
+
+        <h2>למי זה מתאים?</h2>
+        <ul>
+            <li>עסק קטן או בינוני עם מספר מערכות כמו ניהול לקוחות, חנות אונליין וניהול חשבונות.</li>
+            <li>חברה גדולה עם אלפי לקוחות וזרימה בלתי נגמרת של מידע.</li>
+            <li>יזמים שמחפשים פתרונות יצירתיים לתהליכים מסובכים.</li>
+        </ul>
+        <p><strong>MAKE נותן שקט נפשי</strong> – המערכות מדברות זו עם זו בצורה חלקה, ואתם מתפנים לנהל את העסק במקום את המידע.</p>
+
+        <h2>דוגמאות ליישום קסום של MAKE בעסקים</h2>
+        <h3>חיבור אתר למערכת CRM</h3>
+        <p>כל ליד שנכנס לאתר מועבר אוטומטית ל-CRM, שם נפתח כרטיס לקוח חדש. אם הליד השאיר רק מספר טלפון, MAKE ישלח לו הודעה אוטומטית לבקש פרטים נוספים.</p>
+
+        <h3>ניהול מלאי אונליין</h3>
+        <p>מכרו מוצר בחנות האונליין? המערכת מעדכנת את המלאי, שולחת חשבונית ללקוח ומודיעה למחסן על הצורך באריזה ומשלוח – הכל בלי התערבות ידנית.</p>
+
+        <h3>מעקב אחרי לקוחות</h3>
+        <p>לקוח קיבל הצעת מחיר אבל לא חזר? MAKE יכול להפעיל תהליך אוטומטי שמזכיר לו במייל או ב-SMS שההצעה ממתינה לו.</p>
+
+        <h2>כך תתחילו לעבוד עם MAKE</h2>
+        <p>עם היישום הנכון של MAKE, ניתן לחסוך זמן יקר, להפחית טעויות אנוש, ולשפר את השירות ללקוחות. זהו כלי שמאפשר לכם לקחת שליטה על המידע בעסק ולתפעל אותו באופן חכם יותר.</p>
+    </div>
+    <br/>
+</body>
+</html>

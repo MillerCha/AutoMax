@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta name="google-site-verification" content="lzIo-WrdKrsPdxiuWgkXsdjOAFichUXzTqKzp1xUqMY" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="אוטומציה, אוטומציה עיסקית, אוטומקס, מקסימום אוטומציה, CRM,צאט בוט,מאמרים על אוטומציה עיסקית,טיפים לניהול עסק,">
+    <meta name="author" content="חנה מילר">
+    <title>אוטומקס - אוטומציה עסקית</title>
+    <link rel="icon" href="../favicon.svg" type="image/svg">
+    <link rel="shortcut icon" href="favicon.svg" type="image/svg">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="script" href="./script.js">
+  
+</head>
+<body dir="rtl">
+
+   
+
+    <div class="header-section"></div>
+    <nav class="navbar" onclick="toggleMenu()">
+        <button class="menu-toggle">☰</button> <!-- כפתור לפתיחה -->
+        <ul class="menu">
+            <li class="close-btn"><a href="javascript:void(0);" onclick="toggleMenu()">✖</a></li> <!-- כפתור סגירה "X" -->
+            <li><a href="../index.html"> <span class="menu-icon">✓</span><span>עלינו</span></a></li>
+            <li><a href="../index.html#services"><span class="menu-icon">✓</span><span>שירותים</span> </a></li>
+            <li><a href="../index.html#contact"><span class="menu-icon">✓</span><span>צור קשר</span> </a></li>
+            <li><a href="./ArticleList.html"><span class="menu-icon">✓</span><span>מאמרים</span> </a></li>
+           </ul>
+    </nav>
+    <div class="container">
+         
+        
+        <!-- קונטיינר לכרטיסים -->
+       <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+       
+       
+       <!-- כרטיס 1 -->
+       <a href="./LandingPageArticle.html" >
+       <div class="card">
+           <div class="card-content">
+           <h3 class="card-title">מדריך לבניית דף נחיתה לעסק</h3>
+           <p class="card-description">הבינו את היסודות של בניית דפי נחיתה ותדעו לבנות אותם בעצמכם!.</p>
+           
+       </div>
+       </div>
+    </a>
+       
+       <!-- כרטיס 1 -->
+       <a href="./EmailSending.html">
+      <div class="card">
+           <div class="card-content">
+           <h3 class="card-title">בניית אוטומציה של שליחת מיילים ללידים</h3>
+           <p class="card-description">תלמדו איך ליצור סידרת מיילים אוטומטית שתשלח לאחר הרשמה לרשימת תפוצה</p>
+       </div>
+       </div>
+       </a>
+
+       <!-- כרטיס 1 -->
+       <a href="./Make.html">
+       <div class="card">
+           <div class="card-content">
+           <h3 class="card-title">קסמים בתקשורת</h3>
+           <p class="card-description">איך נייצר תקשורת אוטומטית בין התוכנות בעסק</p>
+       </div>
+       </div>
+       </a>
+      
+       
+   </div>
+
+ </div>
+
+    <script>
+        const element = document.getElementById("dynamic-text");
+        const textArray = ["מקסימום אוטומציה", "אוטומציה עסקית"];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typingSpeed = 100;
+
+        function type() {
+            const currentText = textArray[textIndex];
+            if (isDeleting) {
+                // מחיקת האותיות האחרונות בטקסט
+                element.innerHTML = currentText.substring(0, charIndex - 1) + '<span class="caret">|</span>';
+                charIndex--;
+                typingSpeed = 50;
+                if (charIndex === 0) {
+                    isDeleting = false;
+                    textIndex = (textIndex + 1) % textArray.length;
+                }
+            } else {
+                // הוספת אותיות לטקסט
+                element.innerHTML = currentText.substring(0, charIndex + 1) + '<span class="caret">|</span>';
+                charIndex++;
+                typingSpeed = 150;
+                if (charIndex === currentText.length) {
+                    isDeleting = true;
+                    typingSpeed = 1000; // השהייה קצרה לפני מחיקה
+                }
+            }
+            setTimeout(type, typingSpeed);
+        }
+
+        // התחלת האנימציה
+        type();
+
+
+        function toggleMenu() {
+    const menu = document.querySelector('.menu');
+    menu.classList.toggle('show'); // מציג/מסתיר את התפריט
+}
+
+// סגירת התפריט בלחיצה מחוץ לתפריט
+document.addEventListener('click', function(event) {
+    const navbar = document.querySelector('.navbar');
+    
+
+    // בודק שההקלקה היא מחוץ לתפריט
+    if (!navbar.contains(event.target)) {
+        menu.classList.remove('show'); // הסתרת התפריט
+    }
+});;
+    </script>
+</body>
+</html>
