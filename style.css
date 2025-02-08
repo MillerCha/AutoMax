@@ -169,24 +169,23 @@ ul li {
 /* עיצוב כרטיסים */
 .card-1 {
     width: 40%;
-    height: 100px;
+    height: 150px;
     border: 2px solid #91e76f;
     border-radius: 8px;
-    padding: 15px;
     margin: 10px 0;
     transition: transform 0.3s ease, background 0.3s ease;
     cursor: pointer;
     display: flex;
     justify-content: center; /* מרכז אופקית */
     align-items: center; /* מרכז אנכית */
-    height: 100px; /* גובה לדוגמה */
+    padding: 30px;
 }
 
 /* אנימציה של מעבר עכבר */
 .card-1:hover {
     transform: scale(1.05);
     background: linear-gradient(90deg, #89e86c, #f6656b, #f78e5a);
-    color: #ffffff;
+    color: #000000;
 }
 
 /* כפתור קריאה לפעולה */

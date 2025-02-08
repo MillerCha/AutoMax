@@ -10,11 +10,8 @@
     <link rel="icon" href="favicon.svg" type="image/svg">
     <link rel="shortcut icon" href="favicon.svg" type="image/svg">
     <link rel="stylesheet" href="./style.css">
-   <style>
-        /* הגדרות בסיסיות */
+    <script src="script.js" async></script>
 
-     
-    </style>
 </head>
 <body dir="rtl">
 
@@ -70,11 +67,10 @@
         <div id="services">
             <h3 class="section-title">מה אנחנו מציעים?</h3>
             <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-                <div class="card-1">דפי נחיתה</div>
-               
-                <div class="card-1">crm</div>
-                <div class="card-1">תהליכים אוטומטיים</div>
-                <div class="card-1">בוטים</div>
+                <div class="card-1" data-alt="דפי נחיתה ואתרי תדמית">דפי נחיתה</div>
+                <div class="card-1" data-alt="תחליף אידיאלי למחברת ולאקסל">crm</div>
+                <div class="card-1" data-alt="תזכורות לעובדים וללקוחות, העברת נתונים בין מערכות ועוד">תהליכים אוטומטיים</div>
+                <div class="card-1" data-alt="בוטים ללידים ולשירות לקוחות">בוטים</div>
             </div>
         </div>
 
@@ -113,56 +109,7 @@
     </footer>
 
     <script>
-        const element = document.getElementById("dynamic-text");
-        const textArray = ["פתרונות טכנולוגים", "מקסימום אוטומט"];
-        let textIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        let typingSpeed = 100;
-
-        function type() {
-            const currentText = textArray[textIndex];
-            if (isDeleting) {
-                // מחיקת האותיות האחרונות בטקסט
-                element.innerHTML = currentText.substring(0, charIndex - 1) + '<span class="caret">|</span>';
-                charIndex--;
-                typingSpeed = 50;
-                if (charIndex === 0) {
-                    isDeleting = false;
-                    textIndex = (textIndex + 1) % textArray.length;
-                }
-            } else {
-                // הוספת אותיות לטקסט
-                element.innerHTML = currentText.substring(0, charIndex + 1) + '<span class="caret">|</span>';
-                charIndex++;
-                typingSpeed = 150;
-                if (charIndex === currentText.length) {
-                    isDeleting = true;
-                    typingSpeed = 1000; // השהייה קצרה לפני מחיקה
-                }
-            }
-            setTimeout(type, typingSpeed);
-        }
-
-        // התחלת האנימציה
-        type();
-
-
-        function toggleMenu() {
-    const menu = document.querySelector('.menu');
-    menu.classList.toggle('show'); // מציג/מסתיר את התפריט
-}
-
-// סגירת התפריט בלחיצה מחוץ לתפריט
-document.addEventListener('click', function(event) {
-    const navbar = document.querySelector('.navbar');
-    
-
-    // בודק שההקלקה היא מחוץ לתפריט
-    if (!navbar.contains(event.target)) {
-        menu.classList.remove('show'); // הסתרת התפריט
-    }
-});;
+     
     </script>
 </body>
 </html>
