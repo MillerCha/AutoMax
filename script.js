@@ -8,7 +8,7 @@ let typingSpeed = 100;
 function type() {
     const currentText = textArray[textIndex];
     if (isDeleting) {
-        // מחיקת האותיות האחרונות בטקסט
+        // Deleting the last letters in the text
         element.innerHTML = currentText.substring(0, charIndex - 1) + '<span class="caret">|</span>';
         charIndex--;
         typingSpeed = 50;
@@ -17,48 +17,48 @@ function type() {
             textIndex = (textIndex + 1) % textArray.length;
         }
     } else {
-        // הוספת אותיות לטקסט
+         // Adding letters to the text
         element.innerHTML = currentText.substring(0, charIndex + 1) + '<span class="caret">|</span>';
         charIndex++;
         typingSpeed = 150;
         if (charIndex === currentText.length) {
             isDeleting = true;
-            typingSpeed = 1000; // השהייה קצרה לפני מחיקה
+            typingSpeed = 1000; // Short delay before deletion
         }
     }
     setTimeout(type, typingSpeed);
 }
 
-// התחלת האנימציה
+// Start the animation
 type();
 
 
 function toggleMenu() {
-const menu = document.querySelector('.menu');
-menu.classList.toggle('show'); // מציג/מסתיר את התפריט
+    const menu = document.querySelector('.menu');
+    menu.classList.toggle('show'); // Shows/hides the menu
 }
 
-// סגירת התפריט בלחיצה מחוץ לתפריט
-document.addEventListener('click', function(event) {
-const navbar = document.querySelector('.navbar');
+// Close the menu when clicking outside of it
+document.addEventListener('click', function (event) {
+    const navbar = document.querySelector('.navbar');
 
 
-// בודק שההקלקה היא מחוץ לתפריט
-if (!navbar.contains(event.target)) {
-menu.classList.remove('show'); // הסתרת התפריט
-}
+    // Checks if the click is outside the menu
+    if (!navbar.contains(event.target)) {
+        menu.classList.remove('show'); // Hides the menu
+    }
 })
 
 /*start card*/
 document.querySelectorAll(".card-1").forEach(card => {
-    card.dataset.originalText = card.innerText; // שמירת הטקסט המקורי
+    card.dataset.originalText = card.innerText; // Saves the original text
 
     card.addEventListener("mouseenter", () => {
-        card.innerText = card.dataset.alt; // שינוי לטקסט החדש
+        card.innerText = card.dataset.alt; // Changes to the new text
     });
 
     card.addEventListener("mouseleave", () => {
-        card.innerText = card.dataset.originalText; // החזרת הטקסט המקורי
+        card.innerText = card.dataset.originalText; // Restores the original text
     });
 });
 /*end card*/

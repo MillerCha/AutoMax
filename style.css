@@ -12,20 +12,18 @@ body {
     overflow: hidden auto;
 }
 
-/* עיצוב הקונטיינר הראשי */
+/* Main container styling */
 .container {
     max-width: 800px;
     padding: 20px;
     text-align: center;
 }
 
-/* כותרת ראשית */
 h1 {
     color: #f78e5a;
     margin-bottom: 20px;
 }
 
-/* תת-כותרת */
 h2 {
     color: #89e86c;
     margin-bottom: 30px;
@@ -35,9 +33,9 @@ h2 {
     width: 100vw;
     background-image: url('./robots.jpg'); /* הוספת תמונה לרקע */
     background-size: 1200px; /* מתאם את התמונה לגובה ורוחב של הקטע */
-    background-position: top; /* ממקם את התמונה במרכז */
+    background-position: top; /* ממקם את התמונה  */
 }
-/* כותרות קטעים */
+
 .section-title {
     color: #f6656b;
     margin-top: 40px;
@@ -47,14 +45,12 @@ h2 {
     padding-bottom: 5px;
 }
 
-/* עיצוב טקסט */
 .text-content {
     line-height: 1.6;
     margin-bottom: 30px;
     color: #ffffff;
 }
 
-/* רשימה בתוך קטע השירותים */
 ul {
     list-style: none;
     padding: 0;
@@ -69,7 +65,6 @@ ul li {
 
 
 
-/* כפתור קריאה לפעולה */
 .cta-button {
     display: inline-block;
     background: linear-gradient(90deg, #89e86c, #f6656b, #f78e5a);
@@ -87,15 +82,12 @@ ul li {
     transform: scale(1.05);
 }
 
-/* התאמה לנייד */
 @media (max-width: 600px) {
     h1 { font-size: 2rem; }
     h2 { font-size: 1.2rem; }
     .section-title { font-size: 1.5rem; }
 }
 
-
-/* עיצוב הכרטיסים */
 .card {
     width: 300px;
     height: 200px;
@@ -132,7 +124,6 @@ ul li {
 }
 
 
-/* כותרת */
 .card-title {
     color: #f78e5a;
     font-size: 1.4rem;
@@ -140,7 +131,6 @@ ul li {
     position: absolute;
 }
 
-/* תיאור המאמר */
 .card-description {
     color: #cccccc;
     font-size: 1rem;
@@ -151,14 +141,12 @@ ul li {
     padding: 0 10px;
 }
 
-/* אנימציה של מעבר עכבר */
 .card:hover {
     transform: scale(1.05);
     background: linear-gradient(90deg, #89e86c, #f6656b, #f78e5a);
     color: #ffffff;
 }
 
-/* כאשר העכבר מעל הכרטיס */
 .card:hover .card-title {
     opacity: 0;
 }
@@ -166,7 +154,7 @@ ul li {
 .card:hover .card-description {
     opacity: 1;
 }
-/* עיצוב כרטיסים */
+
 .card-1 {
     width: 40%;
     height: 150px;
@@ -176,19 +164,17 @@ ul li {
     transition: transform 0.3s ease, background 0.3s ease;
     cursor: pointer;
     display: flex;
-    justify-content: center; /* מרכז אופקית */
-    align-items: center; /* מרכז אנכית */
+    justify-content: center; 
+    align-items: center; 
     padding: 30px;
 }
 
-/* אנימציה של מעבר עכבר */
 .card-1:hover {
     transform: scale(1.05);
     background: linear-gradient(90deg, #89e86c, #f6656b, #f78e5a);
     color: #000000;
 }
 
-/* כפתור קריאה לפעולה */
 .cta-button {
     display: inline-block;
     background-color: #89e86c;
@@ -206,13 +192,13 @@ ul li {
 }
 
 
-/*h1 מוסתר , קיים בשביל גוגל*/
+/* Hidden, exists for Google */
 .caption {
-color: #000000; /* צבע הטקסט */
+color: #000000; 
 font-size: 2px; 
 }
 
-/* עיצוב SVG */
+/* SVG styling */
 .icon-container {
 width: 64px;
 height: 64px;
@@ -220,17 +206,16 @@ display: inline-block;
 animation: bounce 2s ease-in-out infinite;;
 }
 
-/*SVG הגדרת הנפשה */
+/* SVG animation settings */
 @keyframes bounce {
 0%, 100% { 
-transform: translateY(0); /* מצב התחלתי וסופי - במיקום המקורי */
+transform: translateY(0); /* Initial and final state - in the original position */
 }
 50% { 
-transform: translateY(-10px); /* באמצע האנימציה - עולה למעלה */
+transform: translateY(-10px); /* Mid-animation - moves upwards */
 }
 }
 
-/* התאמה לנייד */
 @media (max-width: 600px) {
     h1 { font-size: 2rem; }
     h2 { font-size: 1.2rem; }
@@ -238,8 +223,8 @@ transform: translateY(-10px); /* באמצע האנימציה - עולה למעל
 }
 
 
-/* מיכל ההקלדה  - הנפשה של כתיבה ומחיקה*/
-  .typewriter-container {
+/* Typing container - typing and deleting animation */
+.typewriter-container {
     display: inline-flex;
     align-items: center;
     overflow: hidden;
@@ -250,20 +235,18 @@ transform: translateY(-10px); /* באמצע האנימציה - עולה למעל
 }
 
 
-/* חלק קבוע */
 .static-text {
     margin-left: 15px;
 }
 
-/* חלק המתחלף */
 .dynamic-text {
     display: inline-block;
-    width: 360px; /* קבע רוחב לפי הטקסט הארוך ביותר */
+    width: 360px; /* Set width according to the longest text */
     white-space: nowrap;
     overflow: hidden;
 }
 
-/* אפקט הבהוב הסמן */
+/* Cursor blinking effect */
 @keyframes caret-blink {
     50% {
         opacity: 0;
@@ -278,7 +261,6 @@ margin: 0px;
 }
 
 
-/* עיצוב בסיסי לתפריט */
 .navbar {
     display: flex;
     align-items: center;
@@ -287,7 +269,6 @@ margin: 0px;
     width: 100%;
 }
 
-/* עיצוב הרשימה */
 .navbar ul {
     list-style: none;
     margin: 0;
@@ -296,7 +277,6 @@ margin: 0px;
     gap: 20px;
 }
 
-/* קישורים */
 .navbar ul li a {
     color: #ffffff;
     text-decoration: none;
@@ -309,13 +289,13 @@ margin: 0px;
     color: #f78e5a;
 }
 
-/* כפתור פתיחת התפריט במובייל */
+/* Mobile menu toggle button */
 .menu-toggle {
     
     display: none;
 }
 
-/* התאמה לנייד: התפריט יוסתר ויוצג בלחיצה */
+/* Mobile adaptation: the menu is hidden and displayed on click */
 @media (max-width: 640px) {
     .navbar ul {
         display: none;
@@ -331,22 +311,22 @@ margin: 0px;
         width: 150px;
         margin: auto;
         height: fit-content;
-        z-index: 1000; /* מעלה את התפריט מעל כל האלמנטים האחרים */
+        z-index: 1000; 
     }
 
     .menu-toggle {
-        display: inline; /* הצגת כפתור התפריט */
+        display: inline; 
     }
 
     .navbar ul.active {
-        display: flex; /* הצגת התפריט בלחיצה */
+        display: flex; /* Displaying the menu on click */
     }
 }
 
 .menu a {
     display: flex;
     align-items: center;
-    gap: 5px; /* מרווח בין האייקון לטקסט */
+    gap: 5px; 
 }
 
 .menu-icon {
@@ -354,7 +334,6 @@ margin: 0px;
     font-weight: bold;
 }
 
-  /* התאמה לנייד */
   @media (max-width: 640px) {
             h1 { font-size: 1.5rem; }
             h2 { font-size: 1.2rem; }
@@ -373,7 +352,7 @@ margin: 0px;
 
     
     .menu {
-        position: fixed; /* תפריט קבוע במסך קטן */
+        position: fixed;  /* Fixed menu on small screens */
         top: 0;
         left: 0;
         width: 100%;
@@ -381,19 +360,19 @@ margin: 0px;
         flex-direction: column;
         background-color: #000000;
         z-index: 1000;
-        display: none; /* הסתרת התפריט עד שהוא נפתח */
+        display: none; /* Hiding the menu until opened */
     }
 
     .menu.show {
-        display: flex; /* מציג את התפריט */
+        display: flex; /* Displaying the menu */
     }
 
    
-/* כפתור פתיחת התפריט במובייל */
+/* Mobile menu toggle button */
 .menu-toggle {
     
     display: inline-block;
-    padding: 10px; /* אזור לחיץ רחב יותר */
+    padding: 10px; /* Larger clickable area */
     font-size: 1.5rem;
     background-color: transparent;
     border: none;
@@ -409,7 +388,7 @@ margin: 0px;
 }
   }
 
-  /* כפתור סגירה "X" */
+/* Close button "X" */
 .close-btn {
-    display: none; /* מסתיר את הכפתור במסכים גדולים */
+    display: none; /* Hiding the button on larger screens */
 }
